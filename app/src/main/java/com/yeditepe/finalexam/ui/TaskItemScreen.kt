@@ -12,6 +12,14 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TaskItemScreen() {
+    var selectedAnswer: MutableState<Answer?> =
+    mutableStateOf(null)
+  answers.forEach { answer ->
+    SurveyAnswer(
+      answer = answer,
+      isSelected = false,
+
+    
 
     // TODO 1: Create a mutable state to hold completion status (Boolean)
     // Initial value should be false
@@ -22,12 +30,23 @@ fun TaskItemScreen() {
             text = "Submit Final Project",
             style = MaterialTheme.typography.titleLarge
         )
+        
 
         // TODO 2: Show text "Completed" or "Not Completed"
         // depending on completion state
 
         Button(
             onClick = {
+                fun SurveyAnswer(answer: Answer) {
+  Row {
+    / * ... */
+    var selected: Boolean = // ...
+    RadioButton(selected, onClick = {
+        selected = !selected
+    })
+  }
+}
+
                 // TODO 3: Toggle completion state
             }
         ) {
@@ -39,5 +58,8 @@ fun TaskItemScreen() {
 @Preview(showBackground = true)
 @Composable
 fun TaskItemPreview() {
+    Column {
+        Task()
+    }
     // TODO: Call TaskItemScreen
 }
